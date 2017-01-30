@@ -1,0 +1,5 @@
+RewriteEngine On
+# Toute tentative pour afficher autre chose que "index.php" se
+# soldera par une redirection sur index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
