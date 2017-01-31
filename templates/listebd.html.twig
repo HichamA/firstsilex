@@ -1,0 +1,29 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <div class="jumbotron">
+        <h2>Albums de BD</h2>
+        Le paramètre "param1" a la valeur suivante : {{param1}} (il n'est pas utilisé ici)
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Titre</th>
+                <th>Auteur(s)</th>
+                <th>Editeur</th>
+                <th>Parution</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for album in listebd %}
+                <tr>
+                    <td>{{album.id}}</td>
+                    <td>{{album.album}}</td>
+                    <td>{{album.auteur}}</td>
+                    <td>{{album.editeur}}</td>
+                    <td>{{album.parution}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
