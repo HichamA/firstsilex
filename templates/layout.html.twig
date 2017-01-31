@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
         <title>{% block title '' %} - My Silex Application</title>
         <meta name="viewport" content="width=device-width">
         <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
@@ -22,6 +23,43 @@
         </script>
     </head>
     <body>
-        {% block content %}{% endblock %}
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">FirstSilex Project</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ url('homepage')}}">Accueil</a></li>
+                        <li><a href="{{ url('testpage')}}">Page de test</a></li>
+                        <li><a href="{{ url('testparam', {'id':'200'})}}">Page de test avec paramètre 200</a></li>
+                        <li><a href="{{ url('listebd', {'id':'200'})}}">Albums de BD</a></li>
+
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container">
+            <br><br>
+            <div class="page-header">
+                <h2>SILEX Project</h2>
+            </div>
+            {% block content %}{% endblock %}
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Premier projet avec SILEX</p>
+            </div>
+        </footer>
     </body>
 </html>
+

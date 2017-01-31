@@ -17,10 +17,10 @@
             {% for album in listebd %}
                 <tr>
                     <td>{{album.id}}</td>
-                    <td>{{album.album}}</td>
-                    <td>{{album.auteur}}</td>
-                    <td>{{album.editeur}}</td>
-                    <td>{{album.parution}}</td>
+                    <td>{{album.album| capitalize}}</td>
+                    <td>{{album.auteur|title}}</td>
+                    <td>{{album.editeur|title}}</td>
+                    <td>{{album.parution|date("d/m/Y")}}</td>
                 </tr>
             {% endfor %}
             </tbody>

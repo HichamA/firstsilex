@@ -1,0 +1,16 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <form method="post">
+    <fieldset>
+    <legend>Album de BD</legend>
+    {{ form_errors(form) }}
+    {{ form_row(form.album) }}
+    {{ form_row(form.auteur) }}
+    {{ form_row(form.editeur) }}
+    {{ form_row(form.parution) }}
+    <br>
+    {{ form_row(form.save, { 'label': 'Enregistrer' }) }}
+    {{ form_row(form.reset, { 'label': 'Réinitialiser' }) }}
+    </fieldset>
+    </form>
+{% endblock %}
